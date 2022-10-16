@@ -1,11 +1,19 @@
 import React from "react";
+import notes from "../notes";
+import Entry from "./Entry";
 
 function Note(){
     return (
-        <div className="note">
-            <h1>This is the note title</h1>
-            <p> For content</p>
+        <div>
+            {notes.map(entry => (
+                <Entry
+                    key = {entry.key}
+                    title = {entry.title}
+                    content = {entry.content}
+                />
+            ))}
         </div>
+        
     );
 }
 
